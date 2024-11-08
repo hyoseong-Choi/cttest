@@ -2,11 +2,10 @@ package com.example.cttest;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "compile-service")
+@FeignClient(name = "test2-service")
 public interface CompileServiceClient {
 
-    @GetMapping("/code/{id}")
-    BaseResponse<Code> findCode(@PathVariable Integer id);
+    @GetMapping("/health")
+    String findCode();
 }

@@ -2,7 +2,6 @@ package com.example.cttest;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -10,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     private final CompileServiceClient compileServiceClient;
 
-    @GetMapping("/test/{id}")
-    public String test(@PathVariable int id) {
-        return compileServiceClient.findCode(id).toString();
+    @GetMapping("/test")
+    public String test() {
+        return compileServiceClient.findCode();
     }
 }
